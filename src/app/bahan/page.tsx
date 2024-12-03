@@ -4,23 +4,22 @@ import styles from "@/app/page.module.css";
 import { fetchDataBahan, inputDataBahan } from "./service";
 
 
-interface ResponseType {
-    success: boolean
-}
-
-interface ResObj {
-    success: boolean;
+interface DataBahan {
+    name: string;
+    img: string;
+    description: string;
+    total: Number;
 }
 
 export default function Bahan() {
-    const [dataBahan, setDataBahan] = useState([])
+    const [dataBahan, setDataBahan] = useState<DataBahan[]>([])
 
     const fetchData = async () => {
         try {
-            const resp = await fetchDataBahan();
+            let resp: any = await fetchDataBahan();
             console.log("resp---", resp);
 
-            setDataBahan(resp.data)
+            setDataBahan(resp?.data)
         } catch (error) {
             console.log("error", error);
 
@@ -52,7 +51,7 @@ export default function Bahan() {
             <button type="button" className="btn btn-danger mb-5" onClick={createDataBahan}>Danger</button>
             <div className="row row-cols-1 row-cols-md-2 g-4">
                 {setDataBahan.length > 0 &&
-                    dataBahan.map((data, index) => {
+                    dataBahan.map((data: any, index: any) => {
                         return (
                             <div className="col" key={index}>
                                 <div className="card">
