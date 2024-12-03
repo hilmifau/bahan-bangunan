@@ -1,5 +1,8 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import type { Metadata } from "next";
+import ImportBsJS from './importBsJS';
 import localFont from "next/font/local";
+import Navigation from "./components/navbar";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -26,6 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <ImportBsJS />
+        <Navigation/>
         {children}
       </body>
     </html>
