@@ -1,6 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faAddressCard, faPhone, faVoicemail, faDiamond } from '@fortawesome/free-solid-svg-icons'
-import { faPlaystation } from "@fortawesome/free-brands-svg-icons"
 
 const Navigation = () => {
     return (
